@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.nio.channels.InterruptibleChannel;
 import java.util.ArrayList;
 
@@ -51,7 +52,7 @@ public class GLweapon {
         cur = patt[curP];
     }
 
-    public void upPtt()
+    public void upPtt() throws IOException
     {
         if(wait < 1)
         {
@@ -230,7 +231,7 @@ public class GLweapon {
         double[] rt = {dx,dy};
         return rt;
     }
-    public void render()
+    public void render() throws IOException
     {
         for(GLbullet b : bullets)
         {

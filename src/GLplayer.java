@@ -70,7 +70,7 @@ public class GLplayer {
         return dir.get(idx);
     }
 
-    public void render()
+    public void render() throws IOException
     {
         setTex();
         Color.white.bind();
@@ -86,7 +86,7 @@ public class GLplayer {
         GL11.glVertex2f((int)x,(int)y+texture.getTextureHeight());
         GL11.glEnd();
         updt();
-        curWeapon.render();
+        //curWeapon.render();
     }
 
     public void updt()

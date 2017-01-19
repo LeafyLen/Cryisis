@@ -20,10 +20,11 @@ public class GLbullet {
     boolean moving = false;
     String pth = "Assets\\Art\\Tiles\\";
     ArrayList<Texture> frames = new ArrayList<>();
-    public GLbullet(int x, int y)
+    public GLbullet(int x, int y) throws IOException
     {
         this.x = x;
         this.y = y;
+        sF("b-1.png");
     }
     public void vel(double dx, double dy)
     {
@@ -37,9 +38,9 @@ public class GLbullet {
         dY = 0;
         moving = false;
     }
-    public void setFrames(String path) throws IOException
+    public void sF(String path) throws IOException
     {
-        frames.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream(pth+"b-1.png")));
+        frames.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream(pth+path)));
     }
 
     public void render()
